@@ -15,5 +15,28 @@ empinfo={
                  }
                  
        
-class api-info(Resource)
-                       
+class api-info(Resource):
+    def get(self):
+         help={
+              "Available api are":["/help","/check","/empinfo"]
+              }
+    return help
+    
+class status(Resource):
+    def get(self):
+        status={
+              "Machine is:": "Alive"
+                }
+     return status
+     
+class  employeeInfo(Resource):
+    def get(self):
+          retrun empinfo
+          
+#Define Routes          
+api.add_resource("api-info","/help")
+api.add_resource("status","/check")
+api.add_resource("employeeInfo","/empinfo")
+
+#Expose your app at port=5000 on localhost
+app.run(port=5000,host="localhost")
