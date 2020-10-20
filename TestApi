@@ -1,0 +1,13 @@
+There are several ways to check your api:
+     1. CLI - curl -X GET  http://localhost:5000/Endpoints
+     2. GUI - Postman tool or browser(chrome:=> http://localhost:5000/Endpoints)
+     3. Python request module
+     
+     
+     
+Python script to check/test your api:
+  -----------------------------------------
+  import  requests
+  r= requests.get(http://localhost:5000/Endpoints)
+  print(r.text)
+  ----------------------------------------   
