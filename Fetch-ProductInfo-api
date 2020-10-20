@@ -1,0 +1,13 @@
+from flask  import Flask
+from flask_restful  import Resource,Api
+
+app=Flask(__name__)
+myapi=Flask(api)
+
+Products={
+     "Electronics": {
+                        "mobile":"vivo",
+                        "laptop":"Lenovo",
+                        "Tv":"Sony"
+                    }
+      "
