@@ -1,0 +1,42 @@
+from flask  import Flask
+from restful_resource  import Resource,Api
+
+app=Flask(__name__)
+api=Api(app)
+
+class apiinfo(Resource):
+     def get(self):
+        help={
+              "Available APIs are": ["/help","/check","/empinfo/:ename"]
+             }
+     return help
+class status(Resource):
+     def get(self):
+        status={
+               "Your machine/Service is":"Alive"
+               }
+      return status
+  
+  
+ class empinfo(Resource):
+      def get(self):
+          employees={
+              "Harry":  {
+                      "Name":"Harry",
+                      "place":"pune",
+                      "Designation:"Devops-Engineer"
+                        },
+              "Yogita": {
+                      "Name":""Yogita",
+                      "Place":"Pune",
+                      "Designation":"Cloud-Engineer"
+                        }
+                     }
+        return empinfo.get(ename)
+      
+      
+api.add_resource("apiinfo","/help")
+api._add_resource("status","/check")
+api.add_resource(""employee","empinfo/<string:ename>")
+
+app.run(debug=true,port=5000,host="localhost")
