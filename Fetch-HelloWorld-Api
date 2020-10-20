@@ -1,0 +1,16 @@
+from flask  import  Flask
+from flask_restful  import  Resource,Api
+
+app=Flask(__name__)
+myapi=Api(app)
+
+class FetchHello(Resource):
+  def get(self):
+         message=
+              {
+              "Hello":"World"
+              }
+        
+       
+ api.add_resource("FetchHello","/hello")
+ add.run(debug=True,port=5000,host="localhost")
