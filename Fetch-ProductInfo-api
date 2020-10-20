@@ -2,7 +2,7 @@ from flask  import Flask
 from flask_restful  import Resource,Api
 
 app=Flask(__name__)
-myapi=Flask(api)
+myapi=Api(api)
 
 Products={
      "Electronics": {
@@ -10,4 +10,15 @@ Products={
                         "laptop":"Lenovo",
                         "Tv":"Sony"
                     }
-      "
+      "outfits": {
+                        "tshirts":"Parker"
+                        "shoes":"adidas"
+                  }
+
+class Prod_Info(Resource):
+     def get(self):
+                    return Products
+                    
+                    
+api.add_resource("Prod_Info","/items")
+add.run(debug=true,port=5000,host="localhost")
