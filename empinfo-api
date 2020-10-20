@@ -1,0 +1,19 @@
+from flask  import Flask
+from flask_restful  import Resource,Api
+
+app=Flask(__name__)
+myapi=Api(app)
+
+empinfo={
+        "Name":{
+                "Harry":"sisodiya"
+                "yogita":"sisodiya"
+                }
+        "Place":{
+                 "Harry":"7.5L/annum"
+                 "yogita":"6.5L/annum"
+                 }
+                 
+       
+class api-info(Resource)
+                       
